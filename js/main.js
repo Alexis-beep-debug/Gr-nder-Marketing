@@ -111,6 +111,19 @@ window.addEventListener('scroll', function() {
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
+/* ─── Price widget ───────────────────────────────────────── */
+function updatePrices() {
+  var weight = parseFloat(document.getElementById('pw-weight').value) || 1;
+  var count  = parseInt(document.getElementById('pw-count').value,10) || 1;
+  document.querySelectorAll('.hpw-price').forEach(function(el) {
+    var base = parseFloat(el.dataset.base) || 0;
+    var rate = parseFloat(el.dataset.rate) || 1;
+    var price = (base + (weight - 1) * rate * 0.5) * count;
+    el.textContent = '€ ' + price.toFixed(2).replace('.', ',');
+  });
+}
+
 /* ─── Init ───────────────────────────────────────────────── */
 go('home');
 rebuildReviewDots();
+updatePrices();
