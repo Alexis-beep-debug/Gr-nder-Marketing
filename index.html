@@ -99,83 +99,94 @@
       </div>
       <div class="hero-price-widget">
         <div class="hpw-head">
-          <div class="hpw-title">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Preise vergleichen
-          </div>
-          <div class="hpw-sub">Sofortüberblick · alle großen Carrier</div>
-        </div>
-        <div class="hpw-fields">
-          <div class="hpw-field-row">
-            <div class="hpw-field">
-              <label class="hpw-lbl">Von (PLZ / Ort)</label>
-              <input type="text" id="pw-from" class="hpw-input" placeholder="01187 Dresden">
+          <div class="hpw-head-top">
+            <div>
+              <div class="hpw-title">Preisvergleich</div>
+              <div class="hpw-sub">Alle großen Carrier · Sofortüberblick</div>
             </div>
-            <div class="hpw-field">
-              <label class="hpw-lbl">Nach (PLZ / Ort)</label>
-              <input type="text" id="pw-to" class="hpw-input" placeholder="80331 München">
-            </div>
+            <a class="hpw-kompass-pill" href="https://www.mailexpress.de" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Kompass
+            </a>
           </div>
-          <div class="hpw-field-row">
-            <div class="hpw-field">
-              <label class="hpw-lbl">Gewicht (kg)</label>
+          <div class="hpw-inputs">
+            <div class="hpw-input-group">
+              <span class="hpw-input-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
               <input type="number" id="pw-weight" class="hpw-input" value="5" min="0.1" step="0.5" oninput="updatePrices()">
+              <span class="hpw-input-unit">kg</span>
             </div>
-            <div class="hpw-field">
-              <label class="hpw-lbl">Pakete</label>
+            <div class="hpw-input-group">
+              <span class="hpw-input-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              </span>
               <input type="number" id="pw-count" class="hpw-input" value="1" min="1" oninput="updatePrices()">
+              <span class="hpw-input-unit">Pak.</span>
             </div>
           </div>
         </div>
         <div class="hpw-carriers" id="hpw-carriers">
-          <div class="hpw-carrier-row">
-            <div class="carrier-logo cl-dhl-std">dhl</div>
-            <span class="hpw-svc">Standard</span>
+          <div class="hpw-carrier-row hpw-best">
+            <div class="carrier-logo cl-dhl-std">DHL</div>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">DHL Paket</span>
+              <span class="hpw-svc">Standard · 1–2 Tage</span>
+            </div>
             <span class="hpw-price" data-base="5.49" data-rate="1.00">€ 10,49</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
           <div class="hpw-carrier-row">
             <div class="carrier-logo cl-dpd">DPD</div>
-            <span class="hpw-svc">Standard</span>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">DPD</span>
+              <span class="hpw-svc">Standard · 1–2 Tage</span>
+            </div>
             <span class="hpw-price" data-base="5.99" data-rate="1.10">€ 11,49</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
           <div class="hpw-carrier-row">
             <div class="carrier-logo cl-gls">GLS</div>
-            <span class="hpw-svc">Standard</span>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">GLS</span>
+              <span class="hpw-svc">Standard · 1–3 Tage</span>
+            </div>
             <span class="hpw-price" data-base="6.99" data-rate="1.20">€ 12,99</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
           <div class="hpw-carrier-row">
             <div class="carrier-logo cl-dsv">DSV</div>
-            <span class="hpw-svc">Standard</span>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">DSV</span>
+              <span class="hpw-svc">Standard · 2–3 Tage</span>
+            </div>
             <span class="hpw-price" data-base="8.49" data-rate="1.30">€ 14,99</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
           <div class="hpw-carrier-row">
-            <div class="carrier-logo cl-dhl-exp">DHL</div>
-            <span class="hpw-svc">Express</span>
-            <span class="hpw-price" data-base="15.99" data-rate="2.30">€ 27,49</span>
-            <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
-          </div>
-          <div class="hpw-carrier-row">
             <div class="carrier-logo cl-ups">UPS</div>
-            <span class="hpw-svc">Express</span>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">UPS</span>
+              <span class="hpw-svc">Express · Next Day</span>
+            </div>
             <span class="hpw-price" data-base="18.99" data-rate="2.80">€ 32,99</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
           <div class="hpw-carrier-row">
             <div class="carrier-logo cl-fedex">FedEx</div>
-            <span class="hpw-svc">Standard</span>
+            <div class="hpw-carrier-info">
+              <span class="hpw-carrier-name">FedEx</span>
+              <span class="hpw-svc">Express · Next Day</span>
+            </div>
             <span class="hpw-price" data-base="21.99" data-rate="3.20">€ 37,99</span>
             <a class="hpw-anfragen" onclick="go('kontakt')">Anfragen</a>
           </div>
         </div>
         <div class="hpw-footer">
-          <span class="hpw-note">* Beispielpreise · Verbindliches Angebot auf Anfrage</span>
+          <span class="hpw-note">* Richtpreise · verbindliches Angebot auf Anfrage</span>
           <a class="hpw-kompass-btn" href="https://www.mailexpress.de" target="_blank" rel="noopener">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
             Auf Kompass kalkulieren
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
       </div>
