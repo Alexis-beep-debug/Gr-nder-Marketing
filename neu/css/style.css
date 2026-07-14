@@ -125,22 +125,20 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 /* ─── NETZWERK (Ringgrafik) ───────────────────────────────────────── */
 .network-section{background:radial-gradient(ellipse 70% 60% at 30% 40%,var(--bl) 0%,var(--off) 62%)}
 .network-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
-.network-visual{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;margin:0 auto}
-.network-ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%)}
+.network-visual{position:relative;aspect-ratio:1/1;max-width:620px;width:100%;margin:0 auto;padding:6%}
+.network-ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);z-index:0}
 .network-ring.r1{width:34%;height:34%;border:1.5px dashed var(--bls)}
 .network-ring.r2{width:60%;height:60%;border:1.5px solid var(--bls)}
 .network-ring.r3{width:88%;height:88%;border:1.5px dashed rgba(244,122,32,.3)}
+.network-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}
+.network-lines line{stroke:var(--bls);stroke-width:.5}
+.network-lines line.intl{stroke:var(--ols);stroke-dasharray:1.6 1.6}
 .network-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:linear-gradient(150deg,var(--b),var(--bm));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;box-shadow:0 4px 0 rgba(255,255,255,.6),0 16px 32px rgba(30,136,198,.4);text-align:center;z-index:3;border:3px solid #fff}
 .network-hub span{font-size:8.5px;font-weight:600;opacity:.9;text-transform:uppercase;letter-spacing:.6px;margin-top:1px}
-.network-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:6px;background:var(--w);border:1.5px solid var(--bls);border-radius:100px;padding:6px 13px 6px 7px;font-size:11.5px;font-weight:700;color:var(--t1);box-shadow:var(--shadow-sm);white-space:nowrap;z-index:2}
-.network-node .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--b),var(--bm));flex-shrink:0}
+.network-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:5px;background:var(--w);border:1.5px solid var(--bls);border-radius:100px;padding:5px 11px 5px 6px;font-size:11px;font-weight:700;color:var(--t1);box-shadow:var(--shadow-sm);white-space:nowrap;z-index:2}
+.network-node .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--b),var(--bm));flex-shrink:0}
 .network-node.intl{color:var(--od);font-weight:600;border-color:var(--ols)}
 .network-node.intl .dot{background:linear-gradient(135deg,var(--o),var(--od))}
-.network-card{position:absolute;background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);box-shadow:var(--shadow);padding:14px 16px;z-index:4;max-width:210px}
-.network-card-a{left:-6%;bottom:2%}
-.network-card-b{right:-8%;top:4%}
-.nc-title{font-size:12.5px;font-weight:700;color:var(--t1);margin-bottom:2px}
-.nc-sub{font-size:11px;color:var(--t3);line-height:1.5}
 .nc-badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;color:var(--b);background:var(--bl);padding:3px 9px;border-radius:100px;margin-top:8px}
 
 /* ─── SERVICES ───────────────────────────────────────────────────── */
@@ -331,12 +329,6 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .faq-a-inner{padding:0 24px 20px;font-size:14px;color:var(--t2);line-height:1.7}
 
 /* ─── FOOTER ─────────────────────────────────────────────────────── */
-.footer-social{background:var(--bl);padding:18px 0}
-.footer-social-inner{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.footer-social-inner span{font-size:14px;font-weight:700;color:var(--b)}
-.footer-social-links{display:flex;gap:14px}
-.footer-social-links a{width:34px;height:34px;border-radius:50%;background:var(--w);display:flex;align-items:center;justify-content:center;color:var(--b);box-shadow:var(--shadow-sm)}
-.footer-social-links a svg{width:15px;height:15px}
 footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid var(--bd)}
 .footer-grid{max-width:1240px;margin:0 auto;padding:0 40px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px}
 .footer-brand img{height:26px;margin-bottom:14px}
@@ -379,11 +371,10 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .compass-features{gap:20px;flex-direction:column;align-items:center}
   .hero-benefits-inner{flex-direction:column;align-items:flex-start;gap:10px}
   .hb-item{border-left:none;padding:0}
-  .network-card{display:none}
-  .network-visual{max-width:320px}
+  .network-visual{max-width:340px}
 }
 @media(max-width:640px){
-  .wrap,.nav-wrap,.hero-inner,.tt-inner,.footer-grid,.footer-bottom,.footer-social-inner{padding-left:20px;padding-right:20px}
+  .wrap,.nav-wrap,.hero-inner,.tt-inner,.footer-grid,.footer-bottom{padding-left:20px;padding-right:20px}
   .tt-phone{display:none}
   .form-row{grid-template-columns:1fr}
   section{padding:64px 0}
