@@ -170,9 +170,12 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .lsk{color:var(--t3)}.lsv{font-weight:500;color:var(--t1)}
 
 /* ─── STATS ──────────────────────────────────────────────────────── */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);background:var(--t1);border-radius:var(--rxl);overflow:hidden}
-.stat-item{padding:36px 28px;text-align:center}
-.stat-num{font-size:38px;font-weight:800;color:#fff;line-height:1;margin-bottom:8px}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);background:linear-gradient(135deg,#0c1a2c 0%,#16304d 100%);border-radius:var(--rxl);overflow:hidden;box-shadow:var(--shadow)}
+.stat-item{padding:40px 32px;text-align:center;position:relative}
+.stat-item+.stat-item::before{content:'';position:absolute;left:0;top:26%;height:48%;width:1px;background:rgba(255,255,255,.12)}
+.stat-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.stat-icon svg{width:19px;height:19px;stroke:var(--bm)}
+.stat-num{font-size:40px;font-weight:800;color:#fff;line-height:1;margin-bottom:8px}
 .stat-num em{color:var(--o);font-style:normal}
 .stat-label{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
 
@@ -348,7 +351,6 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .warum-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr}
   .values-grid{grid-template-columns:1fr 1fr}
-  .stats-row{grid-template-columns:1fr 1fr}
   .leist-item,.leist-item.rev{grid-template-columns:1fr;direction:ltr}
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -360,7 +362,9 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
 @media(max-width:860px){
   .nav-links{display:none}
   .services-grid,.blog-grid{grid-template-columns:1fr}
-  .values-grid,.stats-row{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:1fr}
+  .stat-item+.stat-item::before{display:none}
   .cta-band{margin:0 20px}
   .features-grid{grid-template-columns:1fr}
   .feat-card.span2{grid-column:span 1}
