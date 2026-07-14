@@ -121,19 +121,19 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .wf-body span{font-size:14px;color:var(--t2);line-height:1.6}
 
 /* ─── NETZWERK (Ringgrafik) ───────────────────────────────────────── */
-.network-section{background:var(--off)}
+.network-section{background:radial-gradient(ellipse 70% 60% at 30% 40%,var(--bl) 0%,var(--off) 62%)}
 .network-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
-.network-visual{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;margin:0 auto}
-.network-ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);border:1px solid var(--bd)}
-.network-ring.r1{width:34%;height:34%}
-.network-ring.r2{width:60%;height:60%;border-color:var(--bls)}
-.network-ring.r3{width:88%;height:88%}
-.network-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:linear-gradient(150deg,var(--b),var(--bm));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:12px;box-shadow:0 12px 28px rgba(30,136,198,.35);text-align:center;z-index:3}
-.network-hub span{font-size:8.5px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.6px;margin-top:1px}
-.network-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:6px;background:var(--w);border:1px solid var(--bd);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:var(--t1);box-shadow:var(--shadow-sm);white-space:nowrap;z-index:2}
-.network-node .dot{width:6px;height:6px;border-radius:50%;background:var(--b);flex-shrink:0}
-.network-node.intl{color:var(--t2);font-weight:500;background:var(--off)}
-.network-node.intl .dot{background:var(--o)}
+.network-visual{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;margin:0 auto}
+.network-ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%)}
+.network-ring.r1{width:34%;height:34%;border:1.5px dashed var(--bls)}
+.network-ring.r2{width:60%;height:60%;border:1.5px solid var(--bls)}
+.network-ring.r3{width:88%;height:88%;border:1.5px dashed rgba(244,122,32,.3)}
+.network-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:linear-gradient(150deg,var(--b),var(--bm));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;box-shadow:0 4px 0 rgba(255,255,255,.6),0 16px 32px rgba(30,136,198,.4);text-align:center;z-index:3;border:3px solid #fff}
+.network-hub span{font-size:8.5px;font-weight:600;opacity:.9;text-transform:uppercase;letter-spacing:.6px;margin-top:1px}
+.network-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:6px;background:var(--w);border:1.5px solid var(--bls);border-radius:100px;padding:6px 13px 6px 7px;font-size:11.5px;font-weight:700;color:var(--t1);box-shadow:var(--shadow-sm);white-space:nowrap;z-index:2}
+.network-node .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--b),var(--bm));flex-shrink:0}
+.network-node.intl{color:var(--od);font-weight:600;border-color:var(--ols)}
+.network-node.intl .dot{background:linear-gradient(135deg,var(--o),var(--od))}
 .network-card{position:absolute;background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);box-shadow:var(--shadow);padding:14px 16px;z-index:4;max-width:210px}
 .network-card-a{left:-6%;bottom:2%}
 .network-card-b{right:-8%;top:4%}
@@ -271,36 +271,40 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .feat-carrier-row .name{flex:1;font-size:13px;font-weight:600;color:var(--t1)}
 .feat-carrier-row .val{font-size:13px;font-weight:700;color:var(--od)}
 
-/* ─── COMPASS (dunkle Mockup-Sektion) ─────────────────────────────── */
-.compass-section{background:linear-gradient(180deg,#0b1e33 0%,#0e2740 100%);padding:96px 0;overflow:hidden}
+/* ─── COMPASS (helle Mockup-Sektion) ──────────────────────────────── */
+.compass-section{background:linear-gradient(180deg,var(--bl) 0%,#fff 65%);padding:96px 0;overflow:hidden}
 .compass-inner{text-align:center;max-width:640px;margin:0 auto 56px}
-.compass-label{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;padding:5px 13px;border-radius:100px;margin-bottom:20px;background:rgba(58,174,224,.14);color:var(--bm);border:1px solid rgba(58,174,224,.25)}
-.compass-section h2{color:#fff;font-size:clamp(27px,3.2vw,38px);font-weight:700;margin-bottom:16px}
-.compass-section .sub{color:rgba(255,255,255,.6);margin:0 auto}
-.compass-mock{max-width:980px;margin:0 auto;background:#101c2b;border:1px solid rgba(255,255,255,.1);border-radius:var(--rxl);box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
-.compass-mock-bar{display:flex;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
-.compass-mock-search{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:8px 14px;font-size:12.5px;color:rgba(255,255,255,.4)}
-.compass-mock-btn{background:var(--bm);color:#0b1e33;font-size:12px;font-weight:700;padding:8px 14px;border-radius:8px;white-space:nowrap}
+.compass-label{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;padding:5px 13px;border-radius:100px;margin-bottom:20px;background:var(--w);color:var(--b);border:1px solid var(--bls)}
+.compass-section h2{color:var(--t1);font-size:clamp(27px,3.2vw,38px);font-weight:700;margin-bottom:16px}
+.compass-section .sub{color:var(--t2);margin:0 auto}
+.compass-mock-wrap{position:relative;max-width:980px;margin:0 auto}
+.compass-mock{background:var(--w);border:1px solid var(--bd);border-radius:var(--rxl);box-shadow:0 30px 70px rgba(16,24,40,.14);overflow:hidden}
+.compass-mock-bar{display:flex;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid var(--bd)}
+.compass-mock-bar img{height:22px;flex-shrink:0}
+.compass-mock-search{flex:1;background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:8px 14px;font-size:12.5px;color:var(--t3)}
+.compass-mock-btn{background:var(--bl);color:var(--b);font-size:12px;font-weight:700;padding:8px 14px;border-radius:8px;white-space:nowrap}
 .compass-mock-body{display:grid;grid-template-columns:1.4fr 1fr}
-.compass-mock-list{padding:18px 0;border-right:1px solid rgba(255,255,255,.08)}
-.compass-mock-tabs{display:flex;gap:18px;padding:0 22px 14px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:6px}
-.compass-mock-tabs span{font-size:12px;color:rgba(255,255,255,.4);padding-bottom:10px}
-.compass-mock-tabs span.cur{color:#fff;font-weight:600;border-bottom:2px solid var(--bm)}
-.compass-mock-row{display:flex;align-items:center;gap:12px;padding:12px 22px}
-.compass-mock-row .co{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:rgba(255,255,255,.7)}
+.compass-mock-list{padding:18px 0;border-right:1px solid var(--bd)}
+.compass-mock-tabs{display:flex;gap:18px;padding:0 22px 14px;border-bottom:1px solid var(--bd);margin-bottom:6px}
+.compass-mock-tabs span{font-size:12px;color:var(--t3);padding-bottom:10px}
+.compass-mock-tabs span.cur{color:var(--b);font-weight:700;border-bottom:2px solid var(--b)}
+.compass-mock-row{display:flex;align-items:center;gap:12px;padding:12px 22px;border-bottom:1px solid var(--off)}
+.compass-mock-row .co{width:30px;height:30px;border-radius:7px;background:var(--t1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:800}
 .compass-mock-row .co.dhl{background:#FFCC00;color:#D40511}
-.compass-mock-row .co.ups{background:#351C15;color:#FFB500}
 .compass-mock-row .info{flex:1}
-.compass-mock-row .info b{display:block;font-size:12.5px;color:#fff;font-weight:600}
-.compass-mock-row .info span{font-size:11px;color:rgba(255,255,255,.4)}
-.compass-mock-row .status{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:100px;background:rgba(58,174,224,.16);color:var(--bm)}
+.compass-mock-row .info b{display:block;font-size:12.5px;color:var(--t1);font-weight:700}
+.compass-mock-row .info span{font-size:11px;color:var(--t3)}
+.compass-mock-row .status{font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:100px;border:1.5px solid var(--b);color:var(--b)}
 .compass-mock-side{padding:22px}
-.compass-mock-side h4{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.4);margin-bottom:14px}
-.compass-mock-field{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 12px;font-size:12px;color:rgba(255,255,255,.6);margin-bottom:10px}
-.compass-mock-cta{display:block;text-align:center;background:var(--bm);color:#0b1e33;font-weight:700;font-size:12.5px;padding:10px;border-radius:8px;margin-top:8px}
+.compass-mock-side h4{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);margin-bottom:14px}
+.compass-mock-field{background:var(--off);border:1px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--t2);margin-bottom:10px}
+.compass-mock-cta{display:block;text-align:center;background:var(--b);color:#fff;font-weight:700;font-size:12.5px;padding:10px;border-radius:8px;margin-top:8px}
+.compass-card{position:absolute;background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);box-shadow:var(--shadow);padding:13px 16px;z-index:4;max-width:190px}
+.compass-card-a{left:-5%;top:12%}
+.compass-card-b{right:-5%;bottom:10%}
 .compass-features{display:flex;justify-content:center;gap:40px;margin-top:48px;flex-wrap:wrap}
-.cf-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:13.5px;font-weight:500}
-.cf-item svg{width:17px;height:17px;stroke:var(--bm);flex-shrink:0}
+.cf-item{display:flex;align-items:center;gap:10px;color:var(--t2);font-size:13.5px;font-weight:500}
+.cf-item svg{width:17px;height:17px;stroke:var(--b);flex-shrink:0}
 
 /* ─── REVIEWS ────────────────────────────────────────────────────── */
 .reviews-section{background:var(--off)}
@@ -357,7 +361,8 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .footer-grid{grid-template-columns:1fr 1fr}
   .reviews-grid{grid-template-columns:1fr 1fr}
   .compass-mock-body{grid-template-columns:1fr}
-  .compass-mock-side{border-top:1px solid rgba(255,255,255,.08)}
+  .compass-mock-side{border-top:1px solid var(--bd)}
+  .compass-card{display:none}
   .network-layout{grid-template-columns:1fr}
   .network-visual{max-width:420px}
 }
