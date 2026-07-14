@@ -120,6 +120,27 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .wf-body strong{display:block;font-size:15.5px;font-weight:700;color:var(--t1);margin-bottom:3px}
 .wf-body span{font-size:14px;color:var(--t2);line-height:1.6}
 
+/* ─── NETZWERK (Ringgrafik) ───────────────────────────────────────── */
+.network-section{background:var(--off)}
+.network-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.network-visual{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;margin:0 auto}
+.network-ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);border:1px solid var(--bd)}
+.network-ring.r1{width:34%;height:34%}
+.network-ring.r2{width:60%;height:60%;border-color:var(--bls)}
+.network-ring.r3{width:88%;height:88%}
+.network-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:linear-gradient(150deg,var(--b),var(--bm));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:12px;box-shadow:0 12px 28px rgba(30,136,198,.35);text-align:center;z-index:3}
+.network-hub span{font-size:8.5px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.6px;margin-top:1px}
+.network-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:6px;background:var(--w);border:1px solid var(--bd);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:var(--t1);box-shadow:var(--shadow-sm);white-space:nowrap;z-index:2}
+.network-node .dot{width:6px;height:6px;border-radius:50%;background:var(--b);flex-shrink:0}
+.network-node.intl{color:var(--t2);font-weight:500;background:var(--off)}
+.network-node.intl .dot{background:var(--o)}
+.network-card{position:absolute;background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);box-shadow:var(--shadow);padding:14px 16px;z-index:4;max-width:210px}
+.network-card-a{left:-6%;bottom:2%}
+.network-card-b{right:-8%;top:4%}
+.nc-title{font-size:12.5px;font-weight:700;color:var(--t1);margin-bottom:2px}
+.nc-sub{font-size:11px;color:var(--t3);line-height:1.5}
+.nc-badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;color:var(--b);background:var(--bl);padding:3px 9px;border-radius:100px;margin-top:8px}
+
 /* ─── SERVICES ───────────────────────────────────────────────────── */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .svc{position:relative;border:1px solid var(--bd);border-radius:var(--rl);padding:30px 26px;background:var(--w);box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease}
@@ -337,6 +358,8 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .reviews-grid{grid-template-columns:1fr 1fr}
   .compass-mock-body{grid-template-columns:1fr}
   .compass-mock-side{border-top:1px solid rgba(255,255,255,.08)}
+  .network-layout{grid-template-columns:1fr}
+  .network-visual{max-width:420px}
 }
 @media(max-width:860px){
   .nav-links{display:none}
@@ -349,6 +372,8 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .compass-features{gap:20px;flex-direction:column;align-items:center}
   .hero-benefits-inner{flex-direction:column;align-items:flex-start;gap:10px}
   .hb-item{border-left:none;padding:0}
+  .network-card{display:none}
+  .network-visual{max-width:320px}
 }
 @media(max-width:640px){
   .wrap,.nav-wrap,.hero-inner,.tt-inner,.footer-grid,.footer-bottom,.footer-social-inner{padding-left:20px;padding-right:20px}
