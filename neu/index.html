@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAILEXPRESS Logistik GmbH — Kurierdienst aus Dresden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
@@ -67,11 +67,11 @@
         <div class="pc-inputs">
           <div class="pc-input-group">
             <span class="pc-input-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-            <input class="pc-input" value="5" readonly><span class="pc-input-unit">kg</span>
+            <input type="number" id="pw-weight" class="pc-input" value="5" min="0.1" step="0.5" oninput="updatePrices()"><span class="pc-input-unit">kg</span>
           </div>
           <div class="pc-input-group">
             <span class="pc-input-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
-            <input class="pc-input" value="1" readonly><span class="pc-input-unit">Pak.</span>
+            <input type="number" id="pw-count" class="pc-input" value="1" min="1" oninput="updatePrices()"><span class="pc-input-unit">Pak.</span>
           </div>
         </div>
       </div>
@@ -79,17 +79,32 @@
         <div class="pc-row pc-best">
           <div class="carrier-logo cl-dhl">DHL</div>
           <div><span class="pc-name">DHL Paket</span><span class="pc-svc">Standard, 1–2 Tage</span></div>
-          <span class="pc-price">10,49 €</span>
+          <span class="pc-price" data-base="5.49" data-rate="1.00">10,49 €</span>
         </div>
         <div class="pc-row">
           <div class="carrier-logo cl-dpd">DPD</div>
           <div><span class="pc-name">DPD</span><span class="pc-svc">Standard, 1–2 Tage</span></div>
-          <span class="pc-price">11,49 €</span>
+          <span class="pc-price" data-base="5.99" data-rate="1.10">11,49 €</span>
         </div>
         <div class="pc-row">
           <div class="carrier-logo cl-gls">GLS</div>
           <div><span class="pc-name">GLS</span><span class="pc-svc">Standard, 1–3 Tage</span></div>
-          <span class="pc-price">12,99 €</span>
+          <span class="pc-price" data-base="6.99" data-rate="1.20">12,99 €</span>
+        </div>
+        <div class="pc-row">
+          <div class="carrier-logo" style="background:#003399;color:#fff">DSV</div>
+          <div><span class="pc-name">DSV</span><span class="pc-svc">Standard, 2–3 Tage</span></div>
+          <span class="pc-price" data-base="8.49" data-rate="1.30">14,99 €</span>
+        </div>
+        <div class="pc-row">
+          <div class="carrier-logo" style="background:#351C15;color:#FFB500">UPS</div>
+          <div><span class="pc-name">UPS Express</span><span class="pc-svc">Next Day</span></div>
+          <span class="pc-price" data-base="18.99" data-rate="2.80">32,99 €</span>
+        </div>
+        <div class="pc-row">
+          <div class="carrier-logo" style="background:#4D148C;color:#FF6600">FDX</div>
+          <div><span class="pc-name">FedEx</span><span class="pc-svc">Express, Next Day</span></div>
+          <span class="pc-price" data-base="21.99" data-rate="3.20">37,99 €</span>
         </div>
       </div>
       <div class="pc-foot">
@@ -128,7 +143,58 @@
   </div>
 </section>
 
-<section id="leistungen">
+<section class="features-section">
+  <div class="wrap">
+    <div class="section-intro center">
+      <div class="label label-b">Compass</div>
+      <h2 class="sh2">Eine Plattform für Ihren gesamten Versand.</h2>
+      <p class="sub">Compass ist unsere Buchungsplattform: Sie vergleichen Carrier nach Preis und Lieferzeit, beauftragen direkt und behalten jede Sendung im Blick, alles an einem Ort.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card span2">
+        <div>
+          <h3>Alle Carrier auf einen Blick vergleichen</h3>
+          <p>DHL, DPD, GLS, UPS und FedEx nebeneinander, sortiert nach Preis oder Lieferzeit, für jede Sendungsgröße neu berechnet.</p>
+        </div>
+        <div class="feat-visual">
+          <div class="feat-carrier-row" style="flex:1"><span class="name">DHL Paket, 1–2 Tage</span><span class="val">10,49 €</span></div>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div>
+          <h3>Sendung live verfolgen</h3>
+          <p>Status jeder Sendung in Echtzeit, ohne Anbieter zu wechseln.</p>
+        </div>
+        <div class="feat-visual">
+          <span class="feat-chip"><span class="dot" style="background:var(--b)"></span>In Zustellung</span>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div>
+          <h3>Direkt beauftragen</h3>
+          <p>Vom Vergleich zur Buchung in einem Schritt, ohne Medienbruch.</p>
+        </div>
+        <div class="feat-visual">
+          <span class="feat-chip"><span class="dot" style="background:var(--o)"></span>Auftrag bestätigt</span>
+        </div>
+      </div>
+      <div class="feat-card span2">
+        <div>
+          <h3>Historie und Auswertung aller Sendungen</h3>
+          <p>Jeder Auftrag, jede Rechnung und jeder Treibstoffzuschlag nachvollziehbar an einem Ort, statt verteilt über mehrere Portale.</p>
+        </div>
+        <div class="feat-visual">
+          <div class="feat-carrier-row" style="flex:1"><span class="name">Treibstoffzuschlag Juni 2026</span><span class="val">39,29 %</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn btn-compass" href="https://www.mailexpress.de" target="_blank" rel="noopener">Mehr über Compass erfahren</a>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen" style="background:var(--off)">
   <div class="wrap">
     <div class="section-intro center">
       <div class="label">Leistungen</div>
@@ -172,6 +238,122 @@
   </div>
 </section>
 
+<section class="compass-section">
+  <div class="wrap">
+    <div class="compass-inner">
+      <div class="compass-label">Compass Plattform</div>
+      <h2>So sieht Ihr Versand in Compass aus.</h2>
+      <p class="sub">Ein Login für Buchung, Sendungsverfolgung und Abholung. Für Bestandskunden bleibt der gewohnte Webfrachtschein weiterhin erreichbar.</p>
+    </div>
+    <div class="compass-mock">
+      <div class="compass-mock-bar">
+        <div class="compass-mock-search">Suche nach Sendungsnummer, Kontakt</div>
+        <div class="compass-mock-btn">+ Neuer Auftrag</div>
+      </div>
+      <div class="compass-mock-body">
+        <div class="compass-mock-list">
+          <div class="compass-mock-tabs">
+            <span class="cur">Aktuelle</span>
+            <span>Beauftragt</span>
+            <span>In Auslieferung</span>
+            <span>Alle</span>
+          </div>
+          <div class="compass-mock-row">
+            <div class="co dhl">DHL</div>
+            <div class="info"><b>Schaltschrankbau Weber GmbH</b><span>Dresden → Hamburg · MX1061000651</span></div>
+            <div class="status">Zugestellt</div>
+          </div>
+          <div class="compass-mock-row">
+            <div class="co ups">UPS</div>
+            <div class="info"><b>Anders &amp; Gleich GmbH</b><span>Dresden → Wien · MX1061000652</span></div>
+            <div class="status">In Zustellung</div>
+          </div>
+          <div class="compass-mock-row">
+            <div class="co dhl">DHL</div>
+            <div class="info"><b>TU Dresden, Fakultät ET</b><span>Dresden → Berlin · MX1061000653</span></div>
+            <div class="status">Zugestellt</div>
+          </div>
+        </div>
+        <div class="compass-mock-side">
+          <h4>Preise anfragen</h4>
+          <div class="compass-mock-field">Von: Zwickauer Str. 72, Dresden</div>
+          <div class="compass-mock-field">Nach: Stadt oder Empfänger wählen</div>
+          <div class="compass-mock-field">5 kg · 1 Paket</div>
+          <a class="compass-mock-cta">Jetzt anfragen</a>
+        </div>
+      </div>
+    </div>
+    <div class="compass-features">
+      <div class="cf-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ein Login für alle Carrier</div>
+      <div class="cf-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Live-Preise und Live-Tracking</div>
+      <div class="cf-item"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Webfrachtschein als Backup jederzeit erreichbar</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="section-intro center">
+      <div class="label">Kundenstimmen</div>
+      <h2 class="sh2">Was unsere Kunden sagen</h2>
+      <p class="sub">4,9 von 5 Sternen bei Google, aus echten Bewertungen unserer Kunden.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">„Seit Jahren verlässlicher Partner für unsere zeitkritischen Sendungen. Was uns überzeugt hat: ein echter Ansprechpartner, der unsere Anforderungen kennt und sofort reagiert.“</div>
+        <div class="rc-author"><div class="rc-av">MS</div><div><div class="rc-name">M. Schneider</div><div class="rc-role">Produktionsleiter, Dresden</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">„Beim internationalen Versand sparen wir mit MAILEXPRESS deutlich gegenüber unserem vorherigen Anbieter, bei gleichzeitig besserem Service. Klare Empfehlung für Industriekunden.“</div>
+        <div class="rc-author"><div class="rc-av">TH</div><div><div class="rc-name">T. Hoffmann</div><div class="rc-role">Geschäftsführer, Leipzig</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">„Wir beauftragen MAILEXPRESS mehrfach täglich. Die Abwicklung ist unkompliziert, die Preise fair, und ich weiß, wen ich anrufe, wenn etwas ist.“</div>
+        <div class="rc-author"><div class="rc-av">SB</div><div><div class="rc-name">S. Braun</div><div class="rc-role">Einkaufsleitung, Sachsen</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-text">„Kurze Wege, schnelle Reaktion, faire Konditionen. Genau das, was man von einem lokalen Kurierdienst erwartet, aber selten bekommt.“</div>
+        <div class="rc-author"><div class="rc-av">KM</div><div><div class="rc-name">K. Müller</div><div class="rc-role">Logistikleiter, Dresden</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-intro center">
+      <div class="label">FAQ</div>
+      <h2 class="sh2">Häufig gestellte Fragen</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Was ist Compass und wie unterscheidet es sich vom Webfrachtschein?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><div class="faq-a-inner">Compass ist unsere Plattform zum Vergleichen, Buchen und Verfolgen von Sendungen über mehrere Carrier hinweg, mit eigenem Login. Der Webfrachtschein bleibt für Bestandskunden als vertraute, separate Umgebung erhalten und dient in Compass zusätzlich als Backup.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wie schnell erhalte ich ein Angebot?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><div class="faq-a-inner">In der Regel innerhalb von 30 Minuten während unserer Geschäftszeiten. Wir disponieren selbst, ohne interne Abstimmungsschleifen.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Was ist der Treibstoffzuschlag und wie oft ändert er sich?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><div class="faq-a-inner">Der Treibstoffzuschlag gleicht schwankende Kraftstoffkosten aus und wird monatlich neu berechnet. Details und aktuelle Werte finden Sie auf unserer <a href="treibstoffzuschlag.html" style="color:var(--b);font-weight:600">Treibstoffzuschlag-Seite</a>.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Kann ich auch ohne Rahmenvertrag versenden?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><div class="faq-a-inner">Ja. Es gibt keine Mindestmengen und keinen Vertragszwang. Sie erhalten vor jeder Fahrt eine klare Kalkulation und zahlen nur, was tatsächlich beauftragt wurde.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wie verfolge ich eine laufende Sendung?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><div class="faq-a-inner">Über das Sendungsverfolgung-Feld oben auf der Seite oder direkt telefonisch bei Ihrem Disponenten.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="cta-band">
   <h2>Testen Sie den Unterschied.</h2>
   <p>Ein kurzes Gespräch zeigt, ob MAILEXPRESS zu Ihrem Versandaufkommen passt.</p>
@@ -181,6 +363,16 @@
   </div>
 </div>
 
+<div class="footer-social">
+  <div class="footer-social-inner">
+    <span>Hier finden Sie uns</span>
+    <div class="footer-social-links">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.75-2.58 3.55V23h-4V8.5z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -211,5 +403,6 @@
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
