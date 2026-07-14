@@ -50,8 +50,8 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 
 /* ─── HERO (hell, mit Deckblatt-Foto) ─────────────────────────────── */
 .hero{position:relative;border-bottom:1px solid var(--bd);overflow:hidden;background:var(--bl)}
-.hero::before{content:'';position:absolute;inset:0;background-image:url('img/hero-deckblatt.jpg');background-size:cover;background-position:center 65%;opacity:.5;z-index:0}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--bl) 0%,rgba(234,245,252,.55) 55%,#fff 100%);z-index:0}
+.hero::before{content:'';position:absolute;inset:0;background-image:url('img/hero-deckblatt.jpg');background-size:cover;background-position:center 60%;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(234,245,252,.92) 0%,rgba(234,245,252,.75) 32%,rgba(234,245,252,.25) 55%,rgba(234,245,252,.1) 75%);z-index:0}
 .hero-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:76px 40px 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;font-size:13px;font-weight:600;color:var(--b);letter-spacing:.2px}
 .hero-eyebrow span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--o)}
