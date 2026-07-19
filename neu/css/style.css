@@ -110,7 +110,7 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .warum-section{background:var(--off)}
 .warum-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .warum-visual{border-radius:var(--rxl);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(145deg,var(--bl) 0%,#dcedf8 100%);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
-.warum-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.warum-visual img{width:100%;height:100%;object-fit:cover;object-position:25% center;display:block}
 .warum-visual-icon{font-size:64px}
 .warum-feats{display:flex;flex-direction:column;gap:20px;margin:26px 0 30px}
 .wf{display:flex;gap:16px;align-items:flex-start}
@@ -269,8 +269,8 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .feat-carrier-row{display:flex;align-items:center;gap:12px;background:var(--w);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow-sm)}
 .feat-carrier-row .name{flex:1;font-size:13px;font-weight:600;color:var(--t1)}
 .feat-carrier-row .val{font-size:13px;font-weight:700;color:var(--od)}
-.feat-mockup{background:rgba(255,255,255,.55);border:1px solid var(--bd);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
-.tint-dark .feat-mockup{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.feat-mockup{background:var(--w);border:1px solid var(--bd);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-sm)}
+.tint-dark .feat-mockup{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);box-shadow:none}
 .feat-mock-row{display:flex;align-items:center;gap:10px;background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:10px 13px}
 .tint-dark .feat-mock-row{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
 .feat-mock-row .fmr-icon{width:26px;height:26px;border-radius:7px;background:var(--ol);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -297,6 +297,7 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .mini-avatar svg{width:12px;height:12px;stroke:var(--od)}
 .tint-dark .mini-avatar{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18)}
 .tint-dark .mini-avatar svg{stroke:#fff}
+.mini-avatar.init{font-size:9.5px;font-weight:700;color:var(--t2);background:var(--off)}
 
 /* avatar stack (social proof row) */
 .avatar-row{display:flex;align-items:center;gap:12px;padding:2px 2px 0}
@@ -317,6 +318,27 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .tint-dark .feat-route-dot{background:var(--bm)}
 .tint-dark .feat-route-van svg{stroke:var(--bm);fill:#0e2740}
 @keyframes feat-route-move{0%,4%{left:0}46%,54%{left:100%}96%,100%{left:0}}
+
+/* route mockup (map pins + connecting line) */
+.mockup-route{display:flex;align-items:flex-start;gap:10px}
+.mockup-route .feat-route{margin-top:13px}
+.mockup-point{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;width:74px;text-align:center}
+.mockup-pin{width:28px;height:28px;border-radius:50%;background:var(--ol);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mockup-pin svg{width:14px;height:14px;stroke:var(--od)}
+.mockup-point-text b{display:block;font-size:11.5px;font-weight:700;color:var(--t1)}
+.mockup-point-text span{font-size:9.5px;color:var(--t3)}
+.tint-dark .mockup-pin{background:rgba(255,255,255,.12)}
+.tint-dark .mockup-pin svg{stroke:var(--bm)}
+.tint-dark .mockup-point-text b{color:#fff}
+.tint-dark .mockup-point-text span{color:rgba(255,255,255,.5)}
+
+.mockup-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;background:var(--bl);color:var(--b)}
+.mockup-badge.ok{background:#E3F6EA;color:#1E9E52}
+
+.mockup-live{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.85)}
+.mockup-live-dot{width:7px;height:7px;border-radius:50%;background:#33d17a;position:relative}
+.mockup-live-dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1.5px solid #33d17a;animation:mockup-live-pulse 1.6s ease-out infinite}
+@keyframes mockup-live-pulse{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.9);opacity:0}}
 
 /* ─── COMPASS (helle Mockup-Sektion) ──────────────────────────────── */
 .compass-section{background:var(--bl);padding:96px 0;overflow:hidden}
