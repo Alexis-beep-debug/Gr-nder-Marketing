@@ -6,7 +6,7 @@
 <title>MEX — Kurierdienst aus Dresden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=29">
+<link rel="stylesheet" href="css/style.css?v=31">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
     <div class="nav-cta">
       <a class="btn btn-compass" href="https://www.mailexpress.de" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-        Compass entdecken
+        <span class="btn-label-full">Compass entdecken</span><span class="btn-label-short">Compass</span>
       </a>
       <a class="btn btn-login" href="https://mailexpress.de/portal/login_portal_test.php">Login</a>
     </div>
@@ -193,21 +193,42 @@
     </div>
     <div class="features-grid">
       <div class="feat-card span2 reveal">
-        <div class="feat-mockup">
-          <div class="feat-mock-row">
-            <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-            <div class="fmr-text"><b>Servomotor, Werk Radeberg</b><span>MEX Express, bestellt 18:40 Uhr</span></div>
-            <div class="mini-avatar" title="Angenommen von M. Weber, Empfang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></div>
-            <div class="fmr-badge ok">Zugestellt 06:52</div>
-          </div>
-          <div class="feat-mock-row">
-            <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="18" height="9"/><polyline points="3 12 8 8 8 11 13 8 13 11 18 8 18 12"/><line x1="7" y1="21" x2="7" y2="17"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="17" y1="21" x2="17" y2="17"/></svg></div>
-            <div class="fmr-text"><b>Steuerungsmodul, Linie 2</b><span>MEX Kurierfahrt, Direktfahrt</span></div>
-            <div class="mini-avatar" title="Fahrer: R. Winter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></div>
-            <div class="fmr-badge">Unterwegs</div>
-          </div>
-          <div class="mini-route">
-            <span class="mini-route-line"><span class="mini-route-truck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></span>
+        <div class="feat-mockup tint-amber">
+          <div class="feat-mockup-split">
+            <div class="fms-main">
+              <div class="feat-mock-row">
+                <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                <div class="fmr-text"><b>Servomotor, Werk Radeberg</b><span>MEX Express, bestellt 18:40 Uhr</span></div>
+                <div class="mini-avatar amber" title="Angenommen von M. Weber, Empfang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="4"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+                <div class="fmr-badge ok">Zugestellt 06:52</div>
+              </div>
+              <div class="feat-mock-row">
+                <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="18" height="9"/><polyline points="3 12 8 8 8 11 13 8 13 11 18 8 18 12"/><line x1="7" y1="21" x2="7" y2="17"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="17" y1="21" x2="17" y2="17"/></svg></div>
+                <div class="fmr-text"><b>Steuerungsmodul, Linie 2</b><span>MEX Kurierfahrt, Direktfahrt</span></div>
+                <div class="mini-avatar blue" title="Fahrer: R. Winter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="4"/><path d="M17 11h3.5a1 1 0 0 1 1 1v1H17z" fill="currentColor" stroke="none"/></svg></div>
+                <div class="fmr-badge">Unterwegs</div>
+              </div>
+              <div class="mini-route">
+                <span class="mini-route-line"><span class="mini-route-truck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></span>
+              </div>
+            </div>
+            <div class="fms-side">
+              <div class="fms-side-label">Ersatzteile diese Woche</div>
+              <div class="stepbars">
+                <div class="stepbar">
+                  <div class="stepbar-track"><div class="bar" style="--h:100%;--c1:var(--am);--c2:var(--amd)"></div></div>
+                  <b>46</b><span>Erfasst</span>
+                </div>
+                <div class="stepbar">
+                  <div class="stepbar-track"><div class="bar" style="--h:68%;--c1:var(--o);--c2:var(--od)"></div></div>
+                  <b>31</b><span>Unterwegs</span>
+                </div>
+                <div class="stepbar">
+                  <div class="stepbar-track"><div class="bar" style="--h:52%;--c1:var(--b);--c2:#145a8a"></div></div>
+                  <b>28</b><span>Zugestellt</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="feat-body">
@@ -217,13 +238,17 @@
         </div>
       </div>
       <div class="feat-card reveal">
-        <div class="feat-mockup">
+        <div class="feat-mockup tint-blue">
           <div class="cluster">
             <div class="cluster-pill"><span class="cluster-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><b>342 Pakete diesen Monat</b></div>
-            <div class="cluster-avatar a1">MK</div>
-            <div class="cluster-avatar a2">TH</div>
-            <div class="cluster-avatar a3">SB</div>
+            <div class="cluster-avatar a1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></div>
+            <div class="cluster-avatar a2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0" fill="#fff" stroke="none"/><circle cx="12" cy="15" r="4"/></svg></div>
+            <div class="cluster-avatar a3"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></div>
             <div class="cluster-avatar a4">+64</div>
+          </div>
+          <div class="cluster-stat">
+            <div class="donut sm" style="--pct:68;--c1:var(--b);--c2:var(--bm)"><div class="donut-hole"><b>68%</b></div></div>
+            <div class="cluster-stat-text"><b>Stammkunden</b><span>Versenden über einen laufenden Rahmenvertrag</span></div>
           </div>
         </div>
         <div class="feat-body">
@@ -233,11 +258,15 @@
         </div>
       </div>
       <div class="feat-card reveal">
-        <div class="feat-mockup">
-          <div class="mockup-badge ok">-28% vs. DHL</div>
+        <div class="feat-mockup tint-orange">
+          <div class="before-after">
+            <div class="ba-block"><span>DHL</span><b>ab 42,00&nbsp;€</b></div>
+            <div class="ba-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            <div class="ba-block ba-after"><span>MEX</span><b>ab 30,00&nbsp;€</b></div>
+          </div>
           <div class="mockup-route">
             <div class="mockup-point">
-              <span class="mockup-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span class="mockup-pin blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
               <div class="mockup-point-text"><b>Dresden</b><span>Abholung</span></div>
             </div>
             <div class="feat-route">
@@ -257,26 +286,34 @@
       </div>
       <div class="feat-card span2 tint-dark reveal">
         <div class="feat-mockup">
-          <div class="feat-mock-row">
-            <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-            <div class="fmr-text"><b>Dresden → München</b><span>MEX Sameday, Direktfahrt</span></div>
-            <div class="mini-avatar" title="Fahrer: T. Krause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></div>
-            <div class="fmr-badge">Ankunft in 2h 40min</div>
+          <div class="feat-mockup-split">
+            <div class="fms-main">
+              <div class="feat-mock-row">
+                <div class="fmr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+                <div class="fmr-text"><b>Dresden → München</b><span>MEX Sameday, Direktfahrt</span></div>
+                <div class="mini-avatar blue" title="Fahrer: T. Krause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="4"/><path d="M17 11h3.5a1 1 0 0 1 1 1v1H17z" fill="currentColor" stroke="none"/></svg></div>
+                <div class="fmr-badge">Ankunft in 2h 40min</div>
+              </div>
+              <div class="mockup-route">
+                <div class="mockup-point">
+                  <span class="mockup-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <div class="mockup-point-text"><b>Dresden</b><span>13:10 Uhr</span></div>
+                </div>
+                <div class="feat-route fast">
+                  <span class="feat-route-line"><span class="feat-route-van"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></span>
+                </div>
+                <div class="mockup-point end">
+                  <span class="mockup-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <div class="mockup-point-text"><b>München</b><span>15:50 Uhr</span></div>
+                </div>
+              </div>
+              <div class="mockup-live"><span class="mockup-live-dot"></span>Live-Tracking aktiv</div>
+            </div>
+            <div class="fms-side">
+              <div class="fms-side-label">Pünktlichkeit Sameday</div>
+              <div class="donut" style="--pct:94;--c1:var(--bm);--c2:var(--b)"><div class="donut-hole"><b>94%</b><span>pünktlich</span></div></div>
+            </div>
           </div>
-          <div class="mockup-route">
-            <div class="mockup-point">
-              <span class="mockup-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <div class="mockup-point-text"><b>Dresden</b><span>13:10 Uhr</span></div>
-            </div>
-            <div class="feat-route fast">
-              <span class="feat-route-line"><span class="feat-route-van"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></span>
-            </div>
-            <div class="mockup-point end">
-              <span class="mockup-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <div class="mockup-point-text"><b>München</b><span>15:50 Uhr</span></div>
-            </div>
-          </div>
-          <div class="mockup-live"><span class="mockup-live-dot"></span>Live-Tracking aktiv</div>
         </div>
         <div class="feat-body">
           <h3>Eilsendungen & Notfälle</h3>
@@ -344,6 +381,7 @@
         <img src="img/compass-mockup.jpg" alt="Compass Plattform: Auftragsübersicht und Preisanfrage">
       </div>
     </div>
+    <p class="compass-scroll-hint">← Zum Scrollen wischen →</p>
     <div class="compass-features">
       <div class="cf-item">
         <div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
