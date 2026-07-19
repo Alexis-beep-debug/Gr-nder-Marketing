@@ -6,7 +6,7 @@
 <title>MEX — Kurierdienst aus Dresden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=33">
+<link rel="stylesheet" href="css/style.css?v=34">
 </head>
 <body>
 
@@ -35,6 +35,25 @@
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-cta">
+      <a class="btn btn-compass" href="https://www.mailexpress.de" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        <span class="btn-label-full">Compass entdecken</span><span class="btn-label-short">Compass</span>
+      </a>
+      <a class="btn btn-login" href="https://mailexpress.de/portal/login_portal_test.php">Login</a>
+    </div>
+      <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleMobileMenu(this)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" class="cur">Start</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="blog.html">Ressourcen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
       <a class="btn btn-compass" href="https://www.mailexpress.de" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
         <span class="btn-label-full">Compass entdecken</span><span class="btn-label-short">Compass</span>
@@ -481,7 +500,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="img/mex-logo.svg" alt="MEX mailexpress">
+      <a href="index.html"><img src="img/mex-logo.svg" alt="MEX mailexpress"></a>
       <p>MAILEXPRESS Logistik GmbH<br>Zwickauer Str. 72-74 &middot; 01187 Dresden<br>Seit 24 Jahren Ihr persönlicher Kurierdienst.</p>
     </div>
     <div class="footer-col"><h4>Leistungen</h4><ul>
@@ -503,7 +522,7 @@
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 MAILEXPRESS Logistik GmbH &middot; HRB 23402 &middot; Amtsgericht Dresden</span>
+    <span>&copy; 2026 MAILEXPRESS Logistik GmbH</span>
     <span class="footer-preview-note">Vorschauseite, noch nicht die finale Version</span>
   </div>
 </footer>

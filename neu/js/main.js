@@ -42,8 +42,32 @@ function initFeatureReveal() {
   cards.forEach(function (el) { observer.observe(el); });
 }
 
+/* ─── Mobile Hamburger-Menü ──────────────────────────────────────── */
+function toggleMobileMenu(btn) {
+  var menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  var isOpen = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
+/* ─── Logo: immer zum Seitenanfang ───────────────────────────────── */
+function initLogoScrollTop() {
+  var isHome = /(^|\/)(index\.html)?$/.test(location.pathname);
+  document.querySelectorAll('.logo a, .footer-brand a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.remove('open');
+      if (isHome) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
 /* ─── Init ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
   updatePrices();
   initFeatureReveal();
+  initLogoScrollTop();
 });
