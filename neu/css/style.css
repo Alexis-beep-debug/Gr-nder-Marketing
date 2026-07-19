@@ -292,6 +292,32 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .feat-link svg{width:14px;height:14px;transition:transform .15s}
 .feat-card:hover .feat-link svg{transform:translateX(3px)}
 
+/* mini avatars (dispatcher / driver / recipient) */
+.mini-avatar{width:24px;height:24px;border-radius:50%;background:var(--w);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mini-avatar svg{width:12px;height:12px;stroke:var(--od)}
+.tint-dark .mini-avatar{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18)}
+.tint-dark .mini-avatar svg{stroke:#fff}
+
+/* avatar stack (social proof row) */
+.avatar-row{display:flex;align-items:center;gap:12px;padding:2px 2px 0}
+.avatar-stack{display:flex;flex-shrink:0}
+.avatar-stack .mini-avatar{margin-left:-9px;border:2px solid var(--w)}
+.avatar-stack .mini-avatar:first-child{margin-left:0}
+.avatar-stack .mini-avatar.more{background:var(--od);color:#fff;font-size:9.5px;font-weight:700;border-color:var(--w)}
+.avatar-label{font-size:11.5px;color:var(--t3);font-weight:600;line-height:1.4}
+
+/* animated route line (globe/plane, van) */
+.feat-route{display:flex;align-items:center;gap:8px;padding:0 4px}
+.feat-route-dot{width:6px;height:6px;border-radius:50%;background:var(--od);flex-shrink:0}
+.feat-route-line{position:relative;flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--bd) 0 6px,transparent 6px 11px)}
+.feat-route-plane,.feat-route-van{position:absolute;top:50%;left:0;width:16px;height:16px;transform:translate(-50%,-50%);animation:feat-route-move 3.6s ease-in-out infinite}
+.feat-route-plane svg,.feat-route-van svg{width:100%;height:100%;stroke:var(--od);fill:var(--off)}
+.feat-route.fast .feat-route-van{animation-duration:1.8s}
+.tint-dark .feat-route-line{background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 6px,transparent 6px 11px)}
+.tint-dark .feat-route-dot{background:var(--bm)}
+.tint-dark .feat-route-van svg{stroke:var(--bm);fill:#0e2740}
+@keyframes feat-route-move{0%,4%{left:0}46%,54%{left:100%}96%,100%{left:0}}
+
 /* ─── COMPASS (helle Mockup-Sektion) ──────────────────────────────── */
 .compass-section{background:var(--bl);padding:96px 0;overflow:hidden}
 .compass-inner{text-align:center;max-width:640px;margin:0 auto 56px}
