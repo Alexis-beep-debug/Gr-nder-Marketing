@@ -23,7 +23,27 @@ function toggleFaq(btn) {
   if (!wasOpen) item.classList.add('open');
 }
 
+/* ─── Scroll-Reveal (Einsatzgebiete-Karten) ─────────────────────── */
+function initFeatureReveal() {
+  var cards = document.querySelectorAll('.feat-card.reveal');
+  if (!cards.length) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cards.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+  cards.forEach(function (el) { observer.observe(el); });
+}
+
 /* ─── Init ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
   updatePrices();
+  initFeatureReveal();
 });
