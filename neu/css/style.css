@@ -170,14 +170,15 @@ nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(18px);b
 .lsk{color:var(--t3)}.lsv{font-weight:500;color:var(--t1)}
 
 /* ─── STATS ──────────────────────────────────────────────────────── */
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);background:var(--w);border:1px solid var(--bd);border-radius:var(--rxl);overflow:hidden;box-shadow:var(--shadow)}
-.stat-item{padding:40px 32px;text-align:center;position:relative}
-.stat-item+.stat-item::before{content:'';position:absolute;left:0;top:26%;height:48%;width:1px;background:var(--bd)}
-.stat-icon{width:42px;height:42px;border-radius:12px;background:var(--ol);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.stat-icon svg{width:19px;height:19px;stroke:var(--od)}
-.stat-num{font-size:40px;font-weight:800;color:#1A1A1A;line-height:1;margin-bottom:8px}
+.stats-row{display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:var(--w);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.stat-item{display:flex;align-items:center;gap:14px;padding:22px 40px;border-left:1px solid var(--bd)}
+.stat-item:first-child{border-left:none}
+.stat-icon{width:auto;height:auto;background:none;margin:0;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.stat-icon svg{width:22px;height:22px;stroke:var(--od)}
+.stat-num-wrap{text-align:left}
+.stat-num{font-size:25px;font-weight:800;color:#1A1A1A;line-height:1.15;margin-bottom:1px}
 .stat-num em{color:var(--o);font-style:normal}
-.stat-label{font-size:13px;color:var(--t3);line-height:1.5}
+.stat-label{font-size:12.5px;color:var(--t3);line-height:1.3}
 
 /* ─── TEAM / VALUES ──────────────────────────────────────────────── */
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -430,8 +431,9 @@ footer{background:var(--w);padding:56px 0 0;margin-top:88px;border-top:1px solid
   .nav-links{display:none}
   .services-grid,.blog-grid{grid-template-columns:1fr}
   .values-grid{grid-template-columns:1fr 1fr}
-  .stats-row{grid-template-columns:1fr}
-  .stat-item+.stat-item::before{display:none}
+  .stats-row{flex-direction:column;align-items:flex-start}
+  .stat-item{border-left:none;border-top:1px solid var(--bd);width:100%}
+  .stat-item:first-child{border-top:none}
   .cta-band{margin:0 20px}
   .features-grid{grid-template-columns:1fr}
   .feat-card.span2{grid-column:span 1}
